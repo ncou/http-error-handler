@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chiron\ErrorHandler;
+namespace Chiron\Http\ErrorHandler;
 
 use Chiron\Http\Exception\HttpException;
 //use Chiron\Http\Psr\Response;

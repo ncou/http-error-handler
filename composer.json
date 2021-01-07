@@ -22,7 +22,8 @@
         "phpstan/phpstan": "^0.12",
         "phpstan/phpstan-phpunit": "^0.12",
         "overtrue/phplint": "^2.0",
-        "chiron/coding-standard": "^3.0"
+        "chiron/coding-standard": "^3.0",
+        "chiron/views": "^1.1"
     },
     "scripts": {
         "phpunit": "phpunit --colors=always",
@@ -31,5 +32,12 @@
         "phplint": "phplint --ansi",
         "check-style": "phpcs src tests",
         "fix-style": "phpcbf src tests"
+    },
+    "extra": {
+        "chiron": {
+            "providers": [
+                "Chiron\\Http\\ErrorHandler\\Provider\\HttpErrorHandlerServiceProvider"
+            ]
+        }
     }
 }

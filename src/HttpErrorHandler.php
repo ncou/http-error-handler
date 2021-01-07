@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Chiron\ErrorHandler;
+namespace Chiron\Http\ErrorHandler;
 
-use Chiron\ErrorHandler\Formatter\FormatterInterface;
-use Chiron\ErrorHandler\Formatter\PlainTextFormatter;
+use Chiron\Http\ErrorHandler\Formatter\FormatterInterface;
+use Chiron\Http\ErrorHandler\Formatter\PlainTextFormatter;
 use Chiron\Http\Exception\HttpException;
 //use Chiron\Http\Psr\Response;
 use Exception;

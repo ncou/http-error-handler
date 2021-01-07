@@ -42,6 +42,8 @@ use Chiron\Core\Config\SettingsConfig;
  */
 // TODO : éventuellement déplacer cette classe de serviceProvider directement dans le package chiron/http car il y a une dépendance vers ce package de http vers http-errorhandler donc ca sera plus propre !!!! Argument de plus si on laisse cette classe dans le package chiron/http-error-handler il faudra ajouter une dépendance vers le module chiron/core car on a besoin du container pour classe du serviceprovider !!!!
 
+// TODO : créer un bootloader pour permettre de publish le fichier ressources/error.html comme un asset pour le configurer la page d'erreur dans l'application de l'utilisateur + ajouter la possibilité de charger cette ressource soit depuis le répertoire de l'application si cette ressource existe, sinon en fallback on récupére le template (error.html) présent dans ce package.
+
 final class HttpErrorHandlerServiceProvider implements ServiceProviderInterface
 {
     /**

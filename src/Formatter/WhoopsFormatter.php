@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Chiron\ErrorHandler\Formatter;
+namespace Chiron\Http\ErrorHandler\Formatter;
 
 use Chiron\Support\VarDumper;
 use function class_exists;
