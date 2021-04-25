@@ -22,6 +22,7 @@ use Throwable;
 
 // TODO : Constructeur => permettre de passer en paramétre le json flags ($jsonEncodeOptions) ????
 // TODO : Constructeur => passer en paramétre la valeur du isPretty == true par défaut
+// TODO : passer la classer en final ???
 class JsonFormatter extends AbstractFormatter
 {
     //json_encode(['errors' => [$error]], \JSON_HEX_TAG | \JSON_HEX_APOS | \JSON_HEX_AMP | \JSON_HEX_QUOT | \JSON_UNESCAPED_SLASHES)

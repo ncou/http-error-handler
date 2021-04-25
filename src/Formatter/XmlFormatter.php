@@ -14,6 +14,7 @@ use Throwable;
 
 //https://github.com/yiisoft/yii-web/blob/master/src/ErrorHandler/XmlRenderer.php
 
+// TODO : passer la classer en final ???
 class XmlFormatter extends AbstractFormatter
 {
     /**

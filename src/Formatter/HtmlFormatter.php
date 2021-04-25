@@ -12,6 +12,7 @@ use Throwable;
 
 // TODO : escape des caractéres HTML => https://github.com/symfony/symfony/blob/a44f58bd79296675b93a6bfc1826d85f6bd6acca/src/Symfony/Component/ErrorHandler/ErrorRenderer/HtmlErrorRenderer.php#L183
 
+// TODO : passer la classer en final ???
 class HtmlFormatter extends AbstractFormatter
 {
     /**
@@ -61,7 +62,7 @@ class HtmlFormatter extends AbstractFormatter
      */
     public function canFormat(Throwable $e): bool
     {
-        //TODO : faire une vérifiecation si le fichier existe, c'est à dire tester le $this->path
+        //TODO : faire une vérification si le fichier existe, c'est à dire tester le $this->path
         return true;
     }
 
@@ -81,6 +82,7 @@ class HtmlFormatter extends AbstractFormatter
      *
      * @return string
      */
+    // TODO : passer cette méthode en public !!!!
     private function render(array $data): string
     {
         // TODO : lever une exception si la valeur de retour est === false car cela veut dire qu'on n'a pas réussi à lire le fichier....
@@ -88,7 +90,8 @@ class HtmlFormatter extends AbstractFormatter
 
         foreach ($data as $key => $val) {
             // TODO : il faudrait utiliser la fonction "h()" pour faire un html encode de la variable $val
-            $html = str_replace("{{ $$key }}", $val, $html);
+            // TODO : gérer le cas ou la valeur est un tableau, il faudrait surement décorer les valeur dans das balises html de type "<ul><li></li></ul>"
+            $html = str_replace("{{ $key }}", $val, $html);
         }
 
         return $html;

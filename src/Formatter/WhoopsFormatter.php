@@ -26,6 +26,7 @@ use Whoops\Run as Whoops;
 //https://github.com/filp/whoops/blob/master/src/Whoops/Handler/PrettyPageHandler.php#L801
 //https://laravel.com/docs/5.8/configuration#hiding-environment-variables-from-debug
 
+// TODO : passer la classer en final ???
 class WhoopsFormatter implements FormatterInterface
 {
     public function format(ServerRequestInterface $request, Throwable $e): string

@@ -10,6 +10,7 @@ use Throwable;
 
 // TODO : il faudra soit ajouter une dépendance composer vers chiron/views, soit dans la méthode canFormat vérifier que la classe TemplateRenderInterface existe bien !!! Ou alors faire cette vérification dans le service provider lorsqu'on va construire le error handler, dans ce cas on n'ajoutera pas ce ViewFormatter !!!
 
+// TODO : passer la classer en final ???
 class ViewFormatter extends AbstractFormatter
 {
     /**

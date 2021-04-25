@@ -8,6 +8,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Throwable;
 
 //https://github.com/rudolfcms/rudolf/blob/d7cd824d8c9553fd95eea4570160a153b37fd7c4/src/component/ErrorHandler/Handler/PlainTextHandler.php
+// TODO : passer la classer en final ???
 class PlainTextFormatter extends AbstractFormatter
 {
     /**
