@@ -135,7 +135,7 @@ final class HttpErrorHandlerServiceProvider implements ServiceProviderInterface
 
 
         $debug = $config->getDebug();
-        $debug = true;
+        //$debug = true;
 
         $manager = new ErrorManager($debug);
 
