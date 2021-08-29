@@ -35,7 +35,7 @@ use Closure;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Throwable;
-use Chiron\Core\Config\SettingsConfig;
+use Chiron\Core\Core;
 
 /**
  * Chiron error handler services provider.
@@ -124,7 +124,7 @@ final class HttpErrorHandlerServiceProvider implements ServiceProviderInterface
 
     // TODO : éventuellement séparer cette méthode en deux parties, une pour enregistrer la classe et la seconde pour configurer la partie "bindHandler" ce sera plus propre.
     // TODO : attention le logger n'est pas utilisé dans le code de la méthode "errorManager()" il faudra aussi vérifier que le LoggerInterface est correctement initialisé car si on ajoute un bridge pour Monolog il faudra s'assurer que celui ci est bien initialisé et qu'il n'y aura pas d'erreurs lors de la récupération du LoggerInterface !!!!
-    private function errorManager(SettingsConfig $config, HttpErrorHandler $handler, LoggerInterface $logger): ErrorManager
+    private function errorManager(Core $core, HttpErrorHandler $handler, LoggerInterface $logger): ErrorManager
     {
         //$manager = new ErrorManager($container->get('config')->app['debug']);
         //$manager = new ErrorManager($container->get('config')->get('app.debug'));
@@ -134,7 +134,7 @@ final class HttpErrorHandlerServiceProvider implements ServiceProviderInterface
         // TODO : améliorer le code, soit passer la classe SettingsConfig au constructeur de la classe ErrorManager, soit éclater ce code en deux partie avec un provider et un bootloader qui se chargera de faire le bindHandler et le setLogger. Voir même ne plus faire le setLogger si on utilise la mutation LoggerAware qui se chargera d'injecter automatiquement le logger par défaut !!! Ou alors ajouter la classe SingletonInterface au ErrorManager + créer une méthode setDebug() qui serait appellée par un bootloader, comme on fait pour Environement ou pour Directory.
 
 
-        $debug = $config->getDebug();
+        $debug = $core->isDebug();
         //$debug = true;
 
         $manager = new ErrorManager($debug);
